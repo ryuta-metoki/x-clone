@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #000;
+  color: #e7e9ea;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #2f3336;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.header h1 { font-size: 20px; font-weight: 700; }
+
+.btn {
+  background: #1d9bf0;
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn:hover { background: #1a8cd8; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #536471;
+  color: #e7e9ea;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.05); }
+
+.btn-ghost {
+  background: none;
+  border: none;
+  color: #f4212e;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 8px;
+}
+
+/* Auth */
+.auth-container {
+  padding: 60px 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.auth-container h2 { font-size: 32px; font-weight: 900; margin-bottom: 40px; }
+
+.auth-tabs {
+  display: flex;
+  border-bottom: 1px solid #2f3336;
+  margin-bottom: 24px;
+}
+.auth-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #71767b;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s;
+}
+.auth-tab.active { color: #e7e9ea; border-bottom-color: #1d9bf0; }
+
+.form-group { margin-bottom: 16px; text-align: left; }
+.form-group label { display: block; font-size: 13px; color: #71767b; margin-bottom: 6px; }
+.form-group input {
+  width: 100%;
+  background: #000;
+  border: 1px solid #2f3336;
+  border-radius: 4px;
+  color: #e7e9ea;
+  font-size: 15px;
+  padding: 12px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.form-group input:focus { border-color: #1d9bf0; }
+
+.error-msg {
+  background: rgba(244,33,46,0.1);
+  border: 1px solid rgba(244,33,46,0.3);
+  border-radius: 4px;
+  color: #f4212e;
+  font-size: 13px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+/* Compose */
+.compose {
+  border-bottom: 8px solid #16181c;
+  padding: 16px 20px;
+  display: flex;
+  gap: 12px;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #1d9bf0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+  user-select: none;
+}
+.compose-inner { flex: 1; }
+.compose textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #e7e9ea;
+  font-size: 20px;
+  resize: none;
+  outline: none;
+  min-height: 80px;
+  font-family: inherit;
+}
+.compose textarea::placeholder { color: #536471; }
+.compose-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  border-top: 1px solid #2f3336;
+  padding-top: 12px;
+}
+.char-count { font-size: 13px; color: #71767b; }
+.char-count.warn { color: #ffd400; }
+.char-count.over { color: #f4212e; }
+
+/* Tweet cards */
+.tweet-card {
+  border-bottom: 1px solid #2f3336;
+  padding: 16px 20px;
+  display: flex;
+  gap: 12px;
+  transition: background 0.15s;
+}
+.tweet-card:hover { background: rgba(255,255,255,0.03); }
+.tweet-body { flex: 1; min-width: 0; }
+.tweet-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.tweet-display-name { font-weight: 700; font-size: 15px; }
+.tweet-username { color: #71767b; font-size: 14px; }
+.tweet-time { color: #71767b; font-size: 14px; }
+.tweet-content { font-size: 15px; line-height: 1.5; word-break: break-word; white-space: pre-wrap; }
+.tweet-actions { display: flex; justify-content: flex-end; margin-top: 8px; }
+
+.loading { text-align: center; color: #71767b; padding: 40px; }
+.empty { text-align: center; color: #71767b; padding: 60px 20px; }
+.empty strong { display: block; font-size: 20px; font-weight: 700; margin-bottom: 8px; }
